@@ -1,0 +1,15 @@
+name: Collaborative workflow
+
+on:
+  push:
+    branches:
+      - main
+
+
+jobs:
+  update_html_and_readme:
+    runs-on: ubuntu-latest
+    steps:
+    #step1 - check repo 
+    - name: Checkout Repository
+      uses: actions/checkout@v3
