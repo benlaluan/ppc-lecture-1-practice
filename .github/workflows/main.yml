@@ -30,5 +30,12 @@ jobs:
       run: |
         sed -i '/<\/body>/i <p>Updated by Member 1 on '"$(date)"'</p>' index.html
 
+      # Check if github acor is member 2
+    - name: Update index.html (Member 2)
+      if: github.actor == 'team-member-2'
+      run: |
+        sed -i '/<\/body>/i <p>Updated by Member 2 on '"$(date)"'</p>' index.html
+
+
 
       
