@@ -23,4 +23,12 @@ jobs:
       if: github.actor == 'benlaluan'
       run: |
         sed -i '/<\/body>/i <p>Updated by Team Leader on '"$(date)"'</p>' index.html
+
+    # Check if github actor is member 1
+    - name: Update index.html (Member 1)
+      if: github.actor == 'team-member-1'
+      run: |
+        sed -i '/<\/body>/i <p>Updated by Member 1 on '"$(date)"'</p>' index.html
+
+
       
