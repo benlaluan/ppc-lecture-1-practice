@@ -13,3 +13,14 @@ jobs:
     #step1 - check repo 
     - name: Checkout Repository
       uses: actions/checkout@v3
+
+    #step 2 - update index.html
+    - name: Check GitHub Username
+      run: echo "Workflow triggered by ${{ github.actor }}"
+
+    #check if github actor = team leader
+    - name: Update index.html (Team Leader)
+      if: github.actor == 'benlaluan'
+      run: |
+        sed -i '/<\/body>/i <p>Updated by Team Leader on '"$(date)"'</p>' index.html
+      
